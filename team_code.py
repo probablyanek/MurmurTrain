@@ -33,17 +33,17 @@ from sklearn.utils.class_weight import compute_class_weight
 
     
 # Train your model.
-def train_challenge_model(data_folder, model_folder, verbose):
+def train_challenge_model(data_folder, model_folder, verbose, ep1 = 30, ep2 = 20, bs1 = 20, bs2 = 20):
     # Find data files.
     if verbose >= 1:
         print('Finding data files...')
 
     PRE_TRAIN = False
     NEW_FREQUENCY = 100 # longest signal, while resampling to 500Hz = 32256 samples
-    EPOCHS_1 = 30
-    EPOCHS_2 = 20
-    BATCH_SIZE_1 = 20
-    BATCH_SIZE_2 = 20
+    EPOCHS_1 = ep1
+    EPOCHS_2 = ep2
+    BATCH_SIZE_1 = bs1
+    BATCH_SIZE_2 = bs2
 
     # Find the patient data files.
     patient_files = find_patient_files(data_folder)
